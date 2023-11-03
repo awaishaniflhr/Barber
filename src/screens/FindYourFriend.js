@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View,Image, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Primary, Secondary, Black } from '../utilities/color'
+import { Primary } from '../utilities/color'
 
 const FindYourFriend = ({navigation}) => {
   return (
@@ -31,7 +31,7 @@ const FindYourFriend = ({navigation}) => {
                 <Text style={styles.loginTxt}>Sync Contact</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.registerBtn} 
-                onPress={() => navigation.navigate('Home')}
+                onPress={() => navigation.navigate('Tabs')}
             >
                 <Text style={styles.registerTxt}>Skip for now</Text>
             </TouchableOpacity>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize: 24,
-        color: Black,
+        color: 'black',
         alignSelf: 'center',
         textAlign: 'center',
         marginBottom:15,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         height:65,
         marginTop:25,
         alignSelf: 'center',
-        backgroundColor:Secondary,
+        backgroundColor:'red',
         borderRadius:10,
         alignItems: 'center',
         justifyContent: 'space-between',

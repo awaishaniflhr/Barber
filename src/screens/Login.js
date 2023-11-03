@@ -1,11 +1,18 @@
 import { StyleSheet, Text, View,Image, TextInput, TouchableOpacity } from 'react-native'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Primary, Secondary,  } from '../utilities/color'
+import { setIsLogin } from '../redux/reducers/userReducers';
+import { store } from '../redux/store';
+import { useSelector } from 'react-redux';
 
 const Login = ({navigation}) => {
 
     const [selectedId, setSelectedId] = useState();
-    
+    const {isLogin }= useSelector(state =>state.root.user)
+
+useEffect (()=> {
+    console.log(isLogin)
+})
 
     
   return (
@@ -46,7 +53,7 @@ const Login = ({navigation}) => {
         
         <View style={styles.loginRegisterBtns}>
             <TouchableOpacity style={styles.loginBtn} 
-                onPress={() => navigation.navigate('Profile')}
+                onPress={() => store.dispatch(setIsLogin(true))}
             >
                 <Text style={styles.loginTxt}>Login</Text>
             </TouchableOpacity>
